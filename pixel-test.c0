@@ -1,0 +1,169 @@
+/**************************************************************************/
+/*              COPYRIGHT Carnegie Mellon University 2021                 */
+/* Do not post this file or any derivative on a public site or repository */
+/**************************************************************************/
+#use <util>
+#use <conio>
+
+// You are welcome to define helper functions for your tests
+
+int main() {
+  // Test some regular cases
+
+assert(get_red(make_pixel(255,255,255,255)) == 255);
+assert(get_red(make_pixel(100,1,255,255)) == 1);
+assert(get_red(make_pixel(255,0,125,100)) == 0);
+assert(get_red(make_pixel(255,20,255,255)) == 20);
+assert(get_red(make_pixel(100,40,255,255)) == 40);
+assert(get_red(make_pixel(255,60,125,100)) == 60);
+assert(get_red(make_pixel(255,80,255,255)) == 80);
+assert(get_red(make_pixel(100,100,255,255)) == 100);
+assert(get_red(make_pixel(255,120,125,100)) == 120);
+assert(get_red(make_pixel(255,127,125,100)) == 127);
+assert(get_red(make_pixel(255,130,255,255)) == 130);
+assert(get_red(make_pixel(255,140,255,255)) == 140);
+assert(get_red(make_pixel(100,160,255,255)) == 160);
+assert(get_red(make_pixel(255,180,125,100)) == 180);
+assert(get_red(make_pixel(100,200,255,255)) == 200);
+assert(get_red(make_pixel(255,220,125,100)) == 220);
+assert(get_red(make_pixel(255,240,255,255)) == 240);
+assert(get_red(make_pixel(100,250,255,255)) == 250);
+
+assert(get_alpha(make_pixel(255,255,255,255)) == 255);
+assert(get_alpha(make_pixel(1,1,255,255)) == 1);
+assert(get_alpha(make_pixel(0,0,125,100)) == 0);
+assert(get_alpha(make_pixel(20,20,255,255)) == 20);
+assert(get_alpha(make_pixel(40,40,255,255)) == 40);
+assert(get_alpha(make_pixel(60,60,125,100)) == 60);
+assert(get_alpha(make_pixel(80,80,255,255)) == 80);
+assert(get_alpha(make_pixel(100,100,255,255)) == 100);
+assert(get_alpha(make_pixel(120,120,125,100)) == 120);
+assert(get_alpha(make_pixel(127,127,125,100)) == 127);
+assert(get_alpha(make_pixel(130,130,255,255)) == 130);
+assert(get_alpha(make_pixel(140,140,255,255)) == 140);
+assert(get_alpha(make_pixel(160,160,255,255)) == 160);
+assert(get_alpha(make_pixel(180,180,125,100)) == 180);
+assert(get_alpha(make_pixel(200,200,255,255)) == 200);
+assert(get_alpha(make_pixel(220,220,125,100)) == 220);
+assert(get_alpha(make_pixel(240,240,255,255)) == 240);
+assert(get_alpha(make_pixel(250,250,255,255)) == 250);
+
+assert(get_green(make_pixel(255,255,255,255)) == 255);
+assert(get_green(make_pixel(1,1,1,255)) == 1);
+assert(get_green(make_pixel(0,0,0,100)) == 0);
+assert(get_green(make_pixel(20,20,20,255)) == 20);
+assert(get_green(make_pixel(40,40,40,255)) == 40);
+assert(get_green(make_pixel(60,60,60,100)) == 60);
+assert(get_green(make_pixel(80,80,80,255)) == 80);
+assert(get_green(make_pixel(100,100,100,255)) == 100);
+assert(get_green(make_pixel(120,120,120,100)) == 120);
+assert(get_green(make_pixel(127,127,127,100)) == 127);
+assert(get_green(make_pixel(130,130,130,255)) == 130);
+assert(get_green(make_pixel(140,140,140,255)) == 140);
+assert(get_green(make_pixel(160,160,160,255)) == 160);
+assert(get_green(make_pixel(180,180,180,100)) == 180);
+assert(get_green(make_pixel(200,200,200,255)) == 200);
+assert(get_green(make_pixel(220,220,220,100)) == 220);
+assert(get_green(make_pixel(240,240,240,255)) == 240);
+assert(get_green(make_pixel(250,250,250,255)) == 250);
+
+assert(get_blue(make_pixel(255,255,255,255)) == 255);
+assert(get_blue(make_pixel(1,1,1,1)) == 1);
+assert(get_blue(make_pixel(0,0,0,0)) == 0);
+assert(get_blue(make_pixel(20,20,20,20)) == 20);
+assert(get_blue(make_pixel(40,40,40,40)) == 40);
+assert(get_blue(make_pixel(60,60,60,60)) == 60);
+assert(get_blue(make_pixel(80,80,80,80)) == 80);
+assert(get_blue(make_pixel(100,100,100,100)) == 100);
+assert(get_blue(make_pixel(120,120,120,120)) == 120);
+assert(get_blue(make_pixel(127,127,127,127)) == 127);
+assert(get_blue(make_pixel(130,130,130,130)) == 130);
+assert(get_blue(make_pixel(140,140,140,140)) == 140);
+assert(get_blue(make_pixel(160,160,160,160)) == 160);
+assert(get_blue(make_pixel(180,180,180,180)) == 180);
+assert(get_blue(make_pixel(200,200,200,200)) == 200);
+assert(get_blue(make_pixel(220,220,220,220)) == 220);
+assert(get_blue(make_pixel(240,240,240,240)) == 240);
+assert(get_blue(make_pixel(250,250,250,250)) == 250);
+
+  // Run some edge cases
+get_red(make_pixel(255,255,255,255));
+get_red(make_pixel(100,1,255,255));
+get_red(make_pixel(255,0,125,100));
+get_red(make_pixel(255,20,255,255));
+get_red(make_pixel(100,40,255,255));
+get_red(make_pixel(255,60,125,100));
+get_red(make_pixel(255,80,255,255));
+get_red(make_pixel(100,100,255,255));
+get_red(make_pixel(255,120,125,100));
+get_red(make_pixel(255,127,125,100));
+get_red(make_pixel(255,130,255,255));
+get_red(make_pixel(255,140,255,255));
+get_red(make_pixel(100,160,255,255));
+get_red(make_pixel(255,180,125,100));
+get_red(make_pixel(100,200,255,255));
+get_red(make_pixel(255,220,125,100));
+get_red(make_pixel(255,240,255,255));
+get_red(make_pixel(100,250,255,255));
+
+get_alpha(make_pixel(255,255,255,255));
+get_alpha(make_pixel(1,1,255,255));
+get_alpha(make_pixel(0,0,125,100));
+get_alpha(make_pixel(20,20,255,255));
+get_alpha(make_pixel(40,40,255,255));
+get_alpha(make_pixel(60,60,125,100));
+get_alpha(make_pixel(80,80,255,255));
+get_alpha(make_pixel(100,100,255,255));
+get_alpha(make_pixel(120,120,125,100));
+get_alpha(make_pixel(127,127,125,100));
+get_alpha(make_pixel(130,130,255,255));
+get_alpha(make_pixel(140,140,255,255));
+get_alpha(make_pixel(160,160,255,255));
+get_alpha(make_pixel(180,180,125,100));
+get_alpha(make_pixel(200,200,255,255));
+get_alpha(make_pixel(220,220,125,100));
+get_alpha(make_pixel(240,240,255,255));
+get_alpha(make_pixel(250,250,255,255));
+
+get_green(make_pixel(255,255,255,255));
+get_green(make_pixel(1,1,1,255));
+get_green(make_pixel(0,0,0,100));
+get_green(make_pixel(20,20,20,255));
+get_green(make_pixel(40,40,40,255));
+get_green(make_pixel(60,60,60,100));
+get_green(make_pixel(80,80,80,255));
+get_green(make_pixel(100,100,100,255));
+get_green(make_pixel(120,120,120,100));
+get_green(make_pixel(127,127,127,100));
+get_green(make_pixel(130,130,130,255));
+get_green(make_pixel(140,140,140,255));
+get_green(make_pixel(160,160,160,255));
+get_green(make_pixel(180,180,180,100));
+get_green(make_pixel(200,200,200,255));
+get_green(make_pixel(220,220,220,100));
+get_green(make_pixel(240,240,240,255));
+get_green(make_pixel(250,250,250,255));
+
+get_blue(make_pixel(255,255,255,255));
+get_blue(make_pixel(1,1,1,1));
+get_blue(make_pixel(0,0,0,0));
+get_blue(make_pixel(20,20,20,20));
+get_blue(make_pixel(40,40,40,40));
+get_blue(make_pixel(60,60,60,60));
+get_blue(make_pixel(80,80,80,80));
+get_blue(make_pixel(100,100,100,100));
+get_blue(make_pixel(120,120,120,120));
+get_blue(make_pixel(127,127,127,127));
+get_blue(make_pixel(130,130,130,130));
+get_blue(make_pixel(140,140,140,140));
+get_blue(make_pixel(160,160,160,160));
+get_blue(make_pixel(180,180,180,180));
+get_blue(make_pixel(200,200,200,200));
+get_blue(make_pixel(220,220,220,220));
+get_blue(make_pixel(240,240,240,240));
+get_blue(make_pixel(250,250,250,250));
+
+
+  printf("All tests passed!\n");
+  return 0;
+}
